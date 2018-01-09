@@ -44,13 +44,15 @@ class AuthInput extends React.Component {
   }
 
   render () {
-    const {errors, ...props} = this.props;
     return (
       <div>
         <label>{this.props.label}</label>
         <input
-          placeholder={this.props.label}
-          {...props}
+          type={this.props.type}
+          className={this.props.className}
+          disabled={this.props.disabled}
+          value={this.props.value}
+          placeholder={this.props.placeholder || this.props.label}
           onChange={this.handleInput.bind(this)} />
         {this.renderErrorList()}
       </div>
